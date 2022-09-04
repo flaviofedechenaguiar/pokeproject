@@ -1,0 +1,37 @@
+import { Box, Stack, Text } from "@chakra-ui/react"
+import Image from "next/image"
+import { useState } from "react";
+import { getColor } from "../utils/vibrant-color";
+
+export const Card = function ({ name, imageSrc }) {
+
+  const [bgColor, setBgColor] = useState("gray.100");
+
+  function onLoadImage(event) {
+    getColor(event.target, function (color) {
+      setBgColor(color);
+    });
+  }
+
+  return (
+    <Box
+      w="12rem" h="15rem"
+      borderRadius={".5rem"} borderWidth={".2rem"} borderColor={"white"}
+      position={"relative"}
+      display={"flex"}
+      bg={bgColor}
+    >
+      <Stack
+        w={"20rem"} height={"20rem"}
+        position={"absolute"} top={"-5rem"} left={"-4rem"}
+      >
+        <Image src={imageSrc} layout={"fill"} onLoad={onLoadImage} />
+      </Stack>
+      <Text
+        mt={"auto"} mb={"1rem"} mx={"auto"}
+        fontSize={"1.7rem"} as="b" color="white">
+        {name}
+      </Text>
+    </Box>
+  )
+}
