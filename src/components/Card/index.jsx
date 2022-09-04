@@ -1,7 +1,7 @@
 import { Box, Stack, Text } from "@chakra-ui/react"
 import Image from "next/image"
 import { useState } from "react";
-import { getColor } from "../utils/vibrant-color";
+import { getColor } from "../../utils/vibrant-color";
 
 export const Card = function ({ name, imageSrc }) {
 
