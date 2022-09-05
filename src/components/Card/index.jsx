@@ -15,21 +15,24 @@ export const Card = function ({ name, imageSrc }) {
 
   return (
     <Box
-      w="12rem" h="15rem"
+      h="15rem"
       borderRadius={".5rem"} borderWidth={".2rem"} borderColor={"white"}
       position={"relative"}
       display={"flex"}
+      justifyContent={"center"}
+      overflow={"hidden"}
       bg={bgColor}
     >
       <Stack
         w={"20rem"} height={"20rem"}
-        position={"absolute"} top={"-5rem"} left={"-4rem"}
+        position={"absolute"} top={"-5rem"}
       >
         <Image src={imageSrc} layout={"fill"} onLoad={onLoadImage} />
       </Stack>
       <Text
-        mt={"auto"} mb={"1rem"} mx={"auto"}
-        fontSize={"1.7rem"} as="b" color="white">
+        mt={"auto"} mb={"1rem"}
+        fontSize={"1.7rem"} as="b" color="white"
+      >
         {name}
       </Text>
     </Box>
