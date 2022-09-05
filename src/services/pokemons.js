@@ -2,8 +2,6 @@ import { api } from "./config/axios"
 
 export const getPokemons = async ({ limit, offset }) => {
   const { data: { results } } = await api.get(`pokemon?limit=${limit}&offset=${offset}`);
-  return results.map((response, index) => ({
-    name: response.name,
-    image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
-  }))
+  const responses = await Promise.all(results.map(result => api.get(result.url)));
+  return responses.map((response) => ({ name: response.data.name, image: response.data.sprites.front_default }))
 }
