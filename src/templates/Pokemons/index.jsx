@@ -14,9 +14,9 @@ export const Pokemons = function () {
       <Box mt={"1rem"}>
         <Container>
           <CardGrid pokemons={pokemons} />
+          <Button display={"block"} m={"1rem auto"} onClick={loadMore}>More</Button>
         </Container>
       </Box>
-      <Button onClick={loadMore}>More</Button>
     </>
   )
 }
