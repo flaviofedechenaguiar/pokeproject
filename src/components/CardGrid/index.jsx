@@ -8,7 +8,11 @@ export const CardGrid = function ({ pokemons = [] }) {
       gridGap={"1.5rem"}
     >
       {pokemons.map(function (pokemon) {
-        return <Card name={pokemon.name} imageSrc={pokemon.imageSrc} />
+        return <Card
+          key={pokemon.name}
+          name={pokemon.name}
+          imageSrc={pokemon.image}
+        />
       })}
     </Grid>
   )
