@@ -24,8 +24,8 @@ export const Card = function ({ name, imageSrc }) {
       bg={bgColor}
     >
       <Stack
-        w={"20rem"} height={"20rem"}
-        position={"absolute"} top={"-5rem"}
+        w={"14rem"} height={"14rem"}
+        position={"absolute"} top={"-1rem"}
       >
         <Image src={imageSrc} layout={"fill"} onLoad={onLoadImage} />
       </Stack>
