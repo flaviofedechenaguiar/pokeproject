@@ -30,7 +30,7 @@ export const Card = function ({ name, imageSrc }) {
         <Image src={imageSrc} layout={"fill"} onLoad={onLoadImage} />
       </Stack>
       <Text
-        mt={"auto"} mb={"1rem"}
+        mt={"auto"} mb={"1rem"} textTransform={"capitalize"}
         fontSize={"1.7rem"} as="b" color="white"
       >
         {name}
