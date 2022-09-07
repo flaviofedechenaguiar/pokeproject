@@ -2,14 +2,16 @@ import { Box, Button } from "@chakra-ui/react"
 import { CardGrid } from "../../components/CardGrid"
 import { Container } from "../../components/Conteiner"
 import { Header } from "../../components/Header"
+import { Loading } from "../../components/Loading"
 import { usePokemons } from "../../hooks/usePokemons"
 
 export const Pokemons = function () {
 
-  const { pokemons, loadMore } = usePokemons();
+  const { pokemons, loadMore, isLoading } = usePokemons();
 
   return (
     <>
+      {isLoading && <Loading />}
       <Header />
       <Box mt={"1rem"}>
         <Container>
