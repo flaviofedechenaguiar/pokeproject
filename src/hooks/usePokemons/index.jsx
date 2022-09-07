@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
 import { getPokemons } from "../../services/pokemons";
 
-export const usePokemons = function () {
+export const usePokemons = () => {
 
   const [pokemons, setPokemons] = useState([]);
   const [offset, setOffset] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-
 
   useEffect(() => {
     setIsLoading(true);

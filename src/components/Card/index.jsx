@@ -3,7 +3,7 @@ import Image from "next/image"
 import { useState } from "react";
 import { getColor } from "../../utils/vibrant-color";
 
-export const Card = function ({ name, imageSrc }) {
+export const Card = ({ name, imageSrc }) => {
 
   const [bgColor, setBgColor] = useState("gray.100");
 
