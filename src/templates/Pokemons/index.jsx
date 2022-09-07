@@ -1,6 +1,6 @@
 import { Box, Button } from "@chakra-ui/react"
 import { CardGrid } from "../../components/CardGrid"
-import { Container } from "../../components/Conteiner"
+import { Container } from "../../components/Container"
 import { Header } from "../../components/Header"
 import { Loading } from "../../components/Loading"
 import { usePokemons } from "../../hooks/usePokemons"
