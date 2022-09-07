@@ -20,7 +20,7 @@ export const usePokemons = function () {
   }
 
   function loadMore() {
-    const PER_PAGE = 10;
+    const PER_PAGE = 20;
     setOffset((prevOffset) => prevOffset + PER_PAGE);
   }
 
