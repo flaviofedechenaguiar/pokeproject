@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <Head>
+        <title>Pokeproject</title>
         <link rel="shortcut icon" href="/images/favicon.ico" />
       </Head>
       <Component {...pageProps} />
