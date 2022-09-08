@@ -20,6 +20,9 @@ RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app ./
 
+RUN mkdir -p /app/.next/cache/images \
+  && chown nextjs:nodejs /app/.next/cache/images
+
 USER nextjs
 
 ENV PORT 3000
