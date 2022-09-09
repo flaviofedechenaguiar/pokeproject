@@ -22,6 +22,8 @@ export const Card = ({ name, imageSrc }) => {
       justifyContent={"center"}
       overflow={"hidden"}
       bg={bgColor}
+      transition={"transform .2s"}
+      _hover={{transform: "scale(1.1)"}}
     >
       <Stack
         w={"14rem"} height={"14rem"}
