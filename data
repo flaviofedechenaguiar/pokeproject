@@ -1,0 +1,249 @@
+// dados do pokemon
+charmeleon
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png
+
+pidgeot
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png
+
+butterfree
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Card component
+/*
+
+ import { Box, Stack, Text } from "@chakra-ui/react"
+import Image from "next/image"
+import { useState } from "react";
+import { getColor } from "../../utils/vibrant-color";
+
+export const Card = ({ name, imageSrc }) => {
+
+  const [bgColor, setBgColor] = useState("gray.100");
+
+  function onLoadImage(event) {
+    getColor(event.target, function (color) {
+      setBgColor(color);
+    });
+  }
+
+  return (
+    <Box
+      h="15rem"
+      borderRadius={".5rem"} borderWidth={".2rem"} borderColor={"white"}
+      position={"relative"}
+      display={"flex"}
+      justifyContent={"center"}
+      overflow={"hidden"}
+      bg={bgColor}
+      transition={"transform .2s"}
+      _hover={{transform: "scale(1.1)"}}
+    >
+      <Stack
+        w={"14rem"} height={"14rem"}
+        position={"absolute"} top={"-1rem"}
+      >
+        <Image src={imageSrc} layout={"fill"} onLoad={onLoadImage} />
+      </Stack>
+      <Text
+        mt={"auto"} mb={"1rem"} textTransform={"capitalize"}
+        fontSize={"1.7rem"} as="b" color="white"
+      >
+        {name}
+      </Text>
+    </Box>
+  )
+}
+
+*/
+
+
+
+//CardGrid component
+/*
+
+import { Grid } from "@chakra-ui/react"
+import { Card } from "../Card"
+
+export const CardGrid = ({ pokemons = [] }) => {
+  return (
+    <Grid
+      gridTemplateColumns={"repeat(auto-fill, minmax(12rem, 1fr))"}
+      gridGap={"1.5rem"}
+    >
+      {pokemons.map((pokemon) =>
+        <Card
+          key={pokemon.name}
+          name={pokemon.name}
+          imageSrc={pokemon.image}
+        />
+      )}
+    </Grid>
+  )
+}
+
+*/
+
+//Container component
+/*
+
+import { Box } from "@chakra-ui/react"
+
+export const Container = ({ children }) => {
+  return (
+    <Box maxWidth={"1440px"} m="0 auto" px="1rem">
+      {children}
+    </Box>
+  )
+}
+
+*/
+
+
+//Header component
+/*
+
+import { HStack } from "@chakra-ui/react"
+import Image from "next/image"
+
+export const Header = () => {
+  return (
+    <header>
+      <HStack py={".3rem"} justifyContent={"center"} bg={"gray.800"}>
+        <Image src="/images/pokeapi.png" width={"231px"} height={"92px"} />
+      </HStack>
+    </header>
+  )
+}
+
+*/
+
+//Loading component
+/*
+
+import { CircularProgress, Stack } from "@chakra-ui/react"
+
+export const Loading = () => {
+  return (
+    <Stack
+      position={"fixed"} top="0" bottom="0" left="0" right="0" zIndex={"1"}
+      justifyContent={"center"}
+      alignItems={"center"}
+      bg={"blackAlpha.500"}
+    >
+      <CircularProgress isIndeterminate color={"green.300"} size={"5rem"} />
+    </Stack>
+  )
+}
+
+*/
+
+//usePokemons hook
+/*
+
+import { useEffect, useState } from "react"
+import { getPokemons } from "../../services/pokemons";
+
+export const usePokemons = () => {
+
+  const [pokemons, setPokemons] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    request();
+  }, [offset]);
+
+  async function request() {
+    const response = await getPokemons({ limit: 20, offset });
+    setPokemons((prevPokemons) => ([...prevPokemons, ...response]));
+    setIsLoading(false);
+  }
+
+  function loadMore() {
+    const PER_PAGE = 20;
+    setOffset((prevOffset) => prevOffset + PER_PAGE);
+  }
+
+  return {
+    pokemons,
+    loadMore,
+    isLoading
+  }
+} 
+
+*/
+
+//Pokemons template
+/*
+
+import { Box, Button } from "@chakra-ui/react"
+import { CardGrid } from "../../components/CardGrid"
+import { Container } from "../../components/Container"
+import { Header } from "../../components/Header"
+import { Loading } from "../../components/Loading"
+import { usePokemons } from "../../hooks/usePokemons"
+
+export const Pokemons = () => {
+
+  const { pokemons, loadMore, isLoading } = usePokemons();
+
+  return (
+    <>
+      {isLoading && <Loading />}
+      <Header />
+      <Box mt={"1rem"}>
+        <Container>
+          <CardGrid pokemons={pokemons} />
+          <Button display={"block"} m={"1rem auto"} onClick={loadMore}>More</Button>
+        </Container>
+      </Box>
+    </>
+  )
+}
+
+*/
