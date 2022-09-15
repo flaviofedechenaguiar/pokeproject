@@ -7,7 +7,7 @@ export const Header = () => {
     <header>
       <GitHubCorner />
       <HStack py={".3rem"} justifyContent={"center"} bg={"gray.800"}>
-        <Image src="/images/pokeapi.png" width={"231px"} height={"92px"} />
+        <Image src="/images/pokeapi.png" width={"231px"} height={"92px"} alt="Pokeapi"/>
       </HStack>
     </header>
   )
